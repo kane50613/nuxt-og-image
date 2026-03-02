@@ -41,5 +41,3 @@ export function getImageDimensions(data: Uint8Array): { width?: number, height?:
 
   return {}
 }
-
-

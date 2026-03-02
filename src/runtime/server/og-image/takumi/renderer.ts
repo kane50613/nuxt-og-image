@@ -123,7 +123,7 @@ async function createImage(event: OgImageRenderEventContext, format: 'png' | 'jp
       }
     }
 
-    const enteries = [];
+    const enteries = []
 
     for (const url of urlsToTry) {
       const data = await $fetch(url, { responseType: 'arrayBuffer' }).catch(() => null)
@@ -133,7 +133,7 @@ async function createImage(event: OgImageRenderEventContext, format: 'png' | 'jp
       }
     }
 
-    return enteries;
+    return enteries
   }))
 
   const dpr = options.takumi?.devicePixelRatio ?? 2
