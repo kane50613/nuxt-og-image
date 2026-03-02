@@ -249,18 +249,7 @@ async function createImage(event: OgImageRenderEventContext, format: 'png' | 'jp
     devicePixelRatio: dpr,
   })
 
-  const result = await state.renderer.render(nodes, renderOptions)
-
-  // @takumi-rs/wasm path
-  if ('asUint8Array' in result) {
-    const buffer = result.asUint8Array().slice()
-
-    result.free()
-
-    return buffer
-  }
-
-  return result
+  return await state.renderer.render(nodes, renderOptions)
 }
 
 const TakumiRenderer: Renderer = {
